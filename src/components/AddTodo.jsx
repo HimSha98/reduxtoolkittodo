@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from '../features/todo/todoSlice';
 
 function AddTodo() {
     const dispatch = useDispatch();
     const [input, setInput] = React.useState('');
 
-    const addTodoHandler = () => {
+    const addTodoHandler = (e) => {
         e.preventDefault();
 
         dispatch(addTodo(input));
@@ -32,4 +32,4 @@ function AddTodo() {
     )
 }
 
-export default AddTodo
+export default AddTodo;

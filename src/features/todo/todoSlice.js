@@ -19,14 +19,14 @@ export const todoSlice = createSlice({
             state.todos.push(todo)
         },
         removeTodo: (state, action) => {
-            state.todos = state.todos.filter((todo) => {
-                todo.id !== action.payload; // HS action.payload HERE IT WILL AUTOMATICALLY COMPARE, NO NEED OF state.todos.id
-            })
+            state.todos = state.todos.filter((todo) =>
+                todo.id !== action.payload // HS action.payload HERE IT WILL AUTOMATICALLY COMPARE, NO NEED OF state.todos.id
+            )
         },
-        updateTodo: () => {},
+        // updateTodo: () => {},
     }
 })
 
 export const {addTodo, removeTodo} = todoSlice.actions; // HS WE HAVE EXPORTED INDIVIDUAL FUNCTIONALITY B'COZ IT WILL BE NEEDED IN OUR COMPONENTS.
 
-export default todoSlice?.reducer;
+export default todoSlice.reducer;
